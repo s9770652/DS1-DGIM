@@ -1,0 +1,5 @@
+https://sherbold.github.io/intro-to-data-science/04_Data-Analysis-Overview.html
+http://infolab.stanford.edu/~ullman/mmds/ch4.pdf
+https://archive-beta.ics.uci.edu/ml/datasets/mushroom
+https://pypi.org/project/dgim/
+https://streamlit.io/
