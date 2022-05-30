@@ -14,7 +14,7 @@ ODOUR_ABBRVS = {
 
 # Configuration and header
 st.set_page_config(page_title="DGIM", page_icon='\U0001F344')  # mushroom favicon
-st.title("Topic 4: One-hot encoding and DGIM")
+st.title("Topic 4: One-Hot Encoding and DGIM")
 st.write("One-hot encoding denotes the technique of replacing a categorical \
 attribute with *k* possible values by binary *k*-ary tuple where the *i*-th \
 element is 1 if and only if the attribute was set to the *i*-th value. \
