@@ -1,0 +1,63 @@
+% !TeX spellcheck = en_GB
+\documentclass[
+	9pt,
+	a4paper,
+	handout
+]{beamer}
+\usetheme{Frankfurt}
+\usepackage{lmodern}
+\beamertemplatenavigationsymbolsempty
+
+\setbeamercolor{section in head/foot}{fg=white, bg=gray!70!black}
+\makeatletter
+\setbeamertemplate{footline}
+{
+	\definecolor{headerblue}{rgb}{0.2, 0.2, 0.7}
+	\setbeamercolor{footblue}{fg=white, bg=headerblue}
+	\definecolor{defblue}{rgb}{0.15, 0.15, 0.55}
+	\setbeamercolor{darkfootblue}{fg=white, bg=defblue}
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.25\paperwidth, ht=2.25ex, dp=1ex, center]{darkfootblue}%
+			\usebeamerfont{author in head/foot}Zeno Adrian Weil
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.5\paperwidth, ht=2.25ex, dp=1ex, center]{footblue}%
+			\usebeamerfont{title in head/foot} Stream Mining: One-Hot Encoding and DGIM
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.25\paperwidth, ht=2.25ex, dp=1ex, right]{darkfootblue}%
+			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+\makeatother
+
+\usepackage[english]{babel}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\title{Stream Mining}
+\subtitle{One-Hot Encoding and DGIM}
+\author{Zeno Adrian Weil}
+\institute{Data Science 1 \\ Goethe University Frankfurt}
+\date{7th of June, 2022}
+
+\begin{document}
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+
+	\section{One-Hot Encoding}
+	\include{one-hot_encoding}
+
+	\section{The DGIM Algorithm}
+	\include{dgim}
+	
+	\section{The Mushroom Data Set}
+	
+	\section{The Implementation}
+
+	\section{References}
+	\include{references}
+\end{document}
