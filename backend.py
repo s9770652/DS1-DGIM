@@ -35,4 +35,4 @@ def dgim_count(data, N, error_rate):
     dgim = Dgim(N, error_rate)
     for i in range(len(data)):
         dgim.update(data[i])
-    return dgim.get_count()
+    return dgim.get_count(), dgim.nb_buckets
