@@ -14,15 +14,19 @@ ODOUR_ABBRVS = {
 
 # Configuration and header
 st.set_page_config(page_title="DGIM", page_icon='\U0001F344')  # mushroom favicon
+
+justified_intro = '<style>p{text-align: justify;}</style>'
+st.markdown(justified_intro, unsafe_allow_html=True)
+
 st.title("Topic 4: One-Hot Encoding and DGIM")
 st.write("One-hot encoding denotes the technique of replacing a categorical \
-attribute with *k* possible values by binary *k*-ary tuple where the *i*-th \
+attribute with *k* possible values by a binary *k*-ary tuple where the *i*-th \
 element is 1 if and only if the attribute was set to the *i*-th value. \
 The Datar-Gionis-Indyk-Motwani algorithm is a technique to estimate \
 the number of ones in the last *N* bits of a binary string. \
 This program demonstrates the DGIM algorithm on a data set of mushrooms. \
-It estimates the edible and poisonous mushrooms of a chosen odour and compares \
-it to the real count.")
+It estimates the number of edible and poisonous mushrooms for a chosen odour and \
+compares it to the real count.")
 
 # Options
 odour = st.selectbox(
