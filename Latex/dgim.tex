@@ -1,12 +1,12 @@
 % !TeX spellcheck = en_GB
-\begin{frame}[t]{The Datar-Gionis-Indyk-Motwani Algorithm}
+\begin{frame}{The Datar-Gionis-Indyk-Motwani Algorithm}
 	\begin{block}{Objectives}
 		\begin{itemize}
 			\item
-			Estimate the number of ones in a bit stream!
+			\emphblack{Estimate} the number of \emphblack{ones} in a bit stream!
 
 			\item
-			Be space-efficient!
+			Be \emphblack{space-efficient}!
 		\end{itemize}
 	\end{block}
 	\begin{itemize}
@@ -14,13 +14,13 @@
 		window size $N$
 
 		\item
-		$\mathcal{O}(\log_2 N)$ buckets
+		$\mathcal{O}(\log_2 N)$ \emphblue{buckets}
 		\begin{itemize}
 			\item
-			timestamp
+			\emphblack{timestamp}
 
 			\item
-			size = number of ones
+			\emphblack{size} = number of ones
 			\begin{itemize}
 				\item
 				powers of two
@@ -37,14 +37,14 @@
 		\end{itemize}
 	
 		\item
-		estimation: sum of sizes of all included buckets + half the size of partially included bucket (if any)
+		needs only \emphmathblack{\mathcal{O}( \!\!\:(\log_2 N)^2 )} \emphblack{bits}
+	
+		\item
+		\emphblue{estimation}: sum of sizes of all included buckets + half the size of a partially included bucket (if any)
 		\begin{itemize}
 			\item
 			error rate: 50\%
 		\end{itemize}
-
-		\item
-		needs only $\mathcal{O}\big( \!(\log_2 N)^2 \big)$ many bits
 	\end{itemize}
 	%
 	\vspace{1mm}
