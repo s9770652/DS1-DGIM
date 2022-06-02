@@ -20,7 +20,7 @@ def read_data():
                 edible.append(codes[line[2*5]])  # Odour is the sixth attribute.
             else:
                 poisonous.append(codes[line[2*5]])
-    return edible, poisonous
+    return [edible, poisonous]
 
 def isolate_column(data, odour):
     """Returns a binary list including one codepoint only."""
