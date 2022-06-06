@@ -24,9 +24,9 @@
 			\begin{itemize}
 				\item
 				powers of two
-
-				\item
-				one or two of each size
+%
+%				\item
+%				one or two of each size
 			\end{itemize}
 
 			\item
@@ -44,14 +44,29 @@
 		needs only \emphmathblack{\mathcal{O}( \!\!\:(\log_2 N)^2 )} \emphblack{bits}
 	\end{itemize}
 	%
-	\vspace{1mm}
-	%
-	{
-		\Large
-		\begin{equation*}
-			\mathtt{\boxed{\dots 1 ~ 0 ~ 1} ~ \boxed{1 ~ 0 ~ 1 ~ 1 ~ 0 ~ 0 ~ 0 ~ 1} ~ 0 ~ \boxed{1 ~ 1 ~ 1 ~ 0 ~ 1} ~ \boxed{1 ~ 0 ~ 0 ~ 1} ~ 0 ~ \boxed{1} ~ \boxed{1} ~ 0}
-		\end{equation*}
-	}
+	\begin{center}
+		\begin{tikzpicture}[node distance=1mm]
+			% bits
+			\tikzstyle{every node} = [font={\large}]
+			\node[draw] (a) {$\dots 1 ~ 0 ~ 1$};
+			\node[draw, right=of a] (b) {$1 ~ 0 ~ 1 ~ 1 ~ 0 ~ 0 ~ 0 ~ 1$};
+			\node[right=of b] (c) {$0$};
+			\node[draw, right=of c] (d) {$1 ~ 1 ~ 1 ~ 0 ~ 1$};
+			\node[draw, right=of d] (e) {$1 ~ 0 ~ 0 ~ 1$};
+			\node[right=of e] (f) {$0$};
+			\node[draw, right=of f] (g) {$1$};
+			\node[draw, right=of g] (h) {$1$};
+			\node[right=of h] (i) {$0$};
+			% bucket sizes
+			\tikzstyle{every node} = [font={\small}]
+			\node[above=0mm of a] {sizes: 8};
+			\node[above=0mm of b] {4};
+			\node[above=0mm of d] {4};
+			\node[above=0mm of e] {2};
+			\node[above=0mm of g] {1};
+			\node[above=0mm of h] {1};
+		\end{tikzpicture}
+	\end{center}
 	%
 	\begin{center}
 		\small
