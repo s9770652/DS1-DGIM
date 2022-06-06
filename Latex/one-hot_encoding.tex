@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_GB
 \begin{frame}{One-Hot Encoding}
 	\begin{itemize}
-		\item
+		\item<2->
 		\emphblue{categorical} features common
 %		\begin{itemize}
 %			\item
@@ -11,23 +11,23 @@
 %			ordinal (e.g.\ levels of satisfaction)
 %		\end{itemize}
 	
-		\item
+		\item<3->
 		need for numbers in algorithms
 	
-		\item
+		\item<4->
 		naïve approach: number serially
 		\begin{itemize}
-			\item
-			arbitrary orders
+%			\item
+%			arbitrary orders
 			
-			\item
-			meaningless arithmetic calculations
+			\item<6->
+			meaningless numerical calculations
 		\end{itemize}
 	
-		\item
+		\item<7->
 		\emphblue{one-hot encoding}
 		\begin{itemize}
-			\item
+			\item<8->
 			one binary feature for each possible value
 		\end{itemize}
 	\end{itemize}
@@ -36,15 +36,17 @@
 	%
 	\begin{center}
 		\begin{tikzpicture}[every node/.style={font={\Large}}]
-			\node[anchor=east] (a) at (0, 0) {$x \in \{ \text{red}, \text{green}, \text{blue} \}$};
-			\node[anchor=south west] (b) at (1, .5) {$x \in \{ 1, 2, 3 \}$};
-			\node[red!85!black] (bmark) at (b.east) {\quad \huge \xmark};
-			\node[anchor=north west] (c) at (1,-.5) {$(x_{\text{red}}, x_{\text{green}}, x_{\text{blue}}) \in \{ 0, 1 \}^3$};
-			\node[green!75!black] (cmark) at (c.east) {\quad \huge \cmark};
+			\onslide<2->{\node[anchor=east] (a) at (0, 0) {$x \in \{ \text{red}, \text{green}, \text{blue} \}$};}
+			\onslide<4->{\node[anchor=south west] (b) at (1, .5) {$x \in \{ 1, 2, 3 \}$};}
+			\onslide<5->{\node[red!85!black] (bmark) at (b.east) {\quad \huge \xmark};}
+			\onslide<8->{
+				\node[anchor=north west] (c) at (1,-.5) {$(x_{\text{red}}, x_{\text{green}}, x_{\text{blue}}) \in \{ 0, 1 \}^3$};
+				\node[green!75!black] (cmark) at (c.east) {\quad \huge \cmark};
+			}
+		
+			\onslide<4->{\path[-stealth] (a.east) edge (b.west);}
 			
-			\path[-stealth]
-			(a.east) edge (b.west) edge (c.west)
-			;
+			\onslide<8->{\path[-stealth] (a.east) edge (c.west);}
 		\end{tikzpicture}
 	\end{center}
 \end{frame}

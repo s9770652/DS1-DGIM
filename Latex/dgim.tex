@@ -1,75 +1,81 @@
 % !TeX spellcheck = en_GB
 \begin{frame}{The Datar-Gionis-Indyk-Motwani Algorithm}
-	\begin{block}{Objectives}
+	\begin{block}{Objectives}<2->
 		\begin{itemize}
-			\item
+			\item<3->
 			\emphblack{Estimate} the number of \emphblack{ones} in a bit stream!
 
-			\item
+			\item<4->
 			Be \emphblack{space-efficient}!
 		\end{itemize}
 	\end{block}
 	\begin{itemize}
-		\item
+		\item<5->
 		window size $N$
 
-		\item
+		\item<6->
 		$\mathcal{O}(\log_2 N)$ \emphblue{buckets}
 		\begin{itemize}
-			\item
+			\item<8->
 			\emphblack{timestamp}
 
-			\item
+			\item<9->
 			\emphblack{size} = number of ones
 			\begin{itemize}
-				\item
+				\item<10->
 				powers of two
 %
 %				\item
 %				one or two of each size
 			\end{itemize}
 
-			\item
+			\item<11->
 			include all ones; end with ones
 		\end{itemize}
 	
-		\item
+		\item<12->
 		\emphblue{estimation}: half the size of the oldest bucket + sum of sizes of all other buckets
 		\begin{itemize}
-			\item
+			\item<15->
 			error rate: 50\%
 		\end{itemize}
 	
-		\item
+		\item<16->
 		needs only \emphmathblack{\mathcal{O}( \!\!\:(\log_2 N)^2 )} \emphblack{bits}
 	\end{itemize}
 	%
 	\begin{center}
 		\begin{tikzpicture}[node distance=1mm]
 			% bits
-			\tikzstyle{every node} = [font={\large}]
-			\node[draw] (a) {$\dots 1 ~ 0 ~ 1$};
-			\node[draw, right=of a] (b) {$1 ~ 0 ~ 1 ~ 1 ~ 0 ~ 0 ~ 0 ~ 1$};
-			\node[right=of b] (c) {$0$};
-			\node[draw, right=of c] (d) {$1 ~ 1 ~ 1 ~ 0 ~ 1$};
-			\node[draw, right=of d] (e) {$1 ~ 0 ~ 0 ~ 1$};
-			\node[right=of e] (f) {$0$};
-			\node[draw, right=of f] (g) {$1$};
-			\node[draw, right=of g] (h) {$1$};
-			\node[right=of h] (i) {$0$};
+			\onslide<7->{
+				\tikzstyle{every node} = [font={\large}]
+				\node[draw] (a) {$\dots 1 ~ 0 ~ 1$};
+				\node[draw, right=of a] (b) {$1 ~ 0 ~ 1 ~ 1 ~ 0 ~ 0 ~ 0 ~ 1$};
+				\node[right=of b] (c) {$0$};
+				\node[draw, right=of c] (d) {$1 ~ 1 ~ 1 ~ 0 ~ 1$};
+				\node[draw, right=of d] (e) {$1 ~ 0 ~ 0 ~ 1$};
+				\node[right=of e] (f) {$0$};
+				\node[draw, right=of f] (g) {$1$};
+				\node[draw, right=of g] (h) {$1$};
+				\node[right=of h] (i) {$0$};
+			}
 			% bucket sizes
-			\tikzstyle{every node} = [font={\small}]
-			\node[above=0mm of a] {sizes: 8};
-			\node[above=0mm of b] {4};
-			\node[above=0mm of d] {4};
-			\node[above=0mm of e] {2};
-			\node[above=0mm of g] {1};
-			\node[above=0mm of h] {1};
+			\onslide<9->{
+				\tikzstyle{every node} = [font={\small}]
+				\node[above=0mm of a] {sizes: 8};
+				\node[above=0mm of b] {4};
+				\node[above=0mm of d] {4};
+				\node[above=0mm of e] {2};
+				\node[above=0mm of g] {1};
+				\node[above=0mm of h] {1};
+			}
 		\end{tikzpicture}
 	\end{center}
 	%
 	\begin{center}
 		\small
-		estimation:~16 \qquad\qquad reality:~14
+		\onslide<13->{estimation:~16}
+		\qquad\qquad
+		\onslide<14->{reality:~14}
 	\end{center}
 \end{frame}
